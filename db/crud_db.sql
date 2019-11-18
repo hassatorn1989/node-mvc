@@ -1,42 +1,40 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 80013
-Source Host           : localhost:3306
-Source Database       : crud_db
+ Source Server         : localhost_3306
+ Source Server Type    : MySQL
+ Source Server Version : 80012
+ Source Host           : 127.0.0.1:3306
+ Source Schema         : crud_db
 
-Target Server Type    : MYSQL
-Target Server Version : 80013
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 80012
+ File Encoding         : 65001
 
-Date: 2019-11-13 15:34:52
+ Date: 18/11/2019 20:20:07
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for product
 -- ----------------------------
 DROP TABLE IF EXISTS `product`;
-CREATE TABLE `product` (
+CREATE TABLE `product`  (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(200) DEFAULT NULL,
-  `product_price` int(11) DEFAULT NULL,
-  `createdAt` datetime DEFAULT NULL,
-  `updatedAt` datetime DEFAULT NULL,
-  PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `product_price` decimal(10, 0) NULL DEFAULT NULL,
+  `createdAt` timestamp(0) NULL DEFAULT NULL,
+  `updatedAt` timestamp(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0),
+  PRIMARY KEY (`product_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES ('1', 'Product 1', '20000', null, null);
-INSERT INTO `product` VALUES ('2', 'Product 2', '2000600000', null, null);
-INSERT INTO `product` VALUES ('3', 'Product 3', '3000', null, null);
-INSERT INTO `product` VALUES ('4', 'Product 4', '2000', null, null);
-INSERT INTO `product` VALUES ('5', 'Product 5', '1500', null, null);
-INSERT INTO `product` VALUES ('6', '4444', '30000', null, null);
-INSERT INTO `product` VALUES ('7', '6666', '66666', null, null);
-INSERT INTO `product` VALUES ('8', '666', '6666', null, null);
-INSERT INTO `product` VALUES ('9', 'aasdas', '9000', null, null);
+INSERT INTO `product` VALUES (10, 'lb8hk', 2000, '2019-11-18 20:18:34', '2019-11-18 20:19:41');
+INSERT INTO `product` VALUES (11, '33333', 444, '2019-11-18 20:18:44', '2019-11-18 20:18:44');
+INSERT INTO `product` VALUES (12, 'สินค้า 1', 30000, '2019-11-18 20:18:56', '2019-11-18 20:18:56');
+
+SET FOREIGN_KEY_CHECKS = 1;
